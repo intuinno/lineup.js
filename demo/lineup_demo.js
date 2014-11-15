@@ -152,18 +152,7 @@ var us;
 
         var svg = d3.select("#county-map").append("svg")
             .attr("width", width)
-<<<<<<< HEAD
-            .attr("height", height)
-            .attr("viewBox", "0,0,96,60");
 
-        queue()
-            .defer(d3.json, "./data/md-counties.json")
-            .await(ready);
-
-        function ready(error, usJson) {
-
-            us = usJson;
-=======
             .attr("height", height);
 
           svg.append("g")
@@ -180,7 +169,6 @@ var us;
               .attr("transform", "scale(0.5)");
 
         d3.select(self.frameElement).style("height", height + "px");
->>>>>>> FETCH_HEAD
 
 
     }

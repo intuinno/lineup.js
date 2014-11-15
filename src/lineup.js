@@ -250,8 +250,8 @@ var LineUp;
 
 
 
-        var width = 480,
-            height = 300;
+        var width = 960,
+            height = 600;
 
         var rateById = d3.map();
 
@@ -273,34 +273,33 @@ var LineUp;
             }));
 
         var projection = d3.geo.albersUsa()
-            .scale(100)
+            .scale(1280)
             .translate([width / 2, height / 2]);
-
-        var colors = d3.scale.linear()
-            .domain([-0.05, 0.250])
-            .rangeRound([0,9]);
 
         var path = d3.geo.path()
             .projection(projection);
 
-        var svg = d3.select("#county-map").append("svg")
+        var svg = d3.select("#county-map").select("svg")
             .attr("width", width)
             .attr("height", height);
 
-          svg.append("g")
-              .attr("id", "states")
-            .selectAll("path")
-              .data(uStatePaths)
-            .enter().append("path")
-              .attr("d", function (d) {
-                return d.d;
-              })
-              .attr("class", function(d) {
-                return "q" + colors(d.healthIndex) + "-9";
-              })
-              .attr("transform", "scale(0.5)");
+        svg.selectAll(".counties").remove();
 
-        d3.select(self.frameElement).style("height", height + "px");
+        svg.append("g")
+            .attr("class", "counties")
+            .selectAll("path")
+            .data(us.features)
+            .enter().append("path")
+            .attr("class", function(d) {
+                // return quantize(rateById.get(d.id));
+
+                return 'counties';
+            })
+            .attr("stroke", "black")
+            .attr("stroke-width", 2)
+            .attr("d", d3.geo.path().projection(projection))
+            .attr("transform","scale(3)");
+
 
 
     };

@@ -97,7 +97,7 @@ var us;
         var svg = d3.select("#county-map").append("svg")
             .attr("width", width)
             .attr("height", height)
-            .attr("viewBox", "0,0,960,600");
+            .attr("viewBox", "0,0,96,60");
 
         queue()
             .defer(d3.json, "./data/md-counties.json")

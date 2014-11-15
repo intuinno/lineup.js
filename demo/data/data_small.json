@@ -1,5 +1,5 @@
 {
-  "file": "duck2-state.txt",
+  "file": "duck.txt",
   "separator" : "\t",
   "primaryKey": "statename",
   "columns": [

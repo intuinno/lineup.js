@@ -241,14 +241,14 @@ var LineUp;
     LineUp.prototype.updateAll = function(stackTransition) {
         this.updateHeader(this.storage.getColumnLayout());
         this.updateBody(this.storage.getColumnLayout(), this.storage.getData(), stackTransition || false);
-        this.updateMap(this.storage.getColumnLayout(), this.storage.getData());
+        this.updateMap(this.storage.getColumnLayout(),this.storage.getData());
     };
 
     LineUp.prototype.updateMap = function(headers, data) {
 
 
 
-
+        
 
         var width = 960,
             height = 600;
@@ -257,14 +257,14 @@ var LineUp;
 
         var childWeight = headers[2].childrenWeights;
 
-        for (var i = 0; i < data.length; i++) {
+        for (var i=0; i < data.length; i++) {
 
-            var j = data[i];
-            var rate = j.Fitness * childWeight[0] + j.Routine * childWeight[1] + j.Nutrition * childWeight[2] + j.Sleep * childWeight[3] + j.Weight * childWeight[4] + j.Diabetes * childWeight[5];
+          var j = data[i];
+          var rate = j.Fitness * childWeight[0] + j.Routine * childWeight[1] + j.Nutrition * childWeight[2] + j.Sleep * childWeight[3] + j.Weight * childWeight[4] + j.Diabetes * childWeight[5];
 
-            rateById.set(j.id, rate);
+          rateById.set(j.id , rate );
 
-        }
+        }  
 
         var quantize = d3.scale.quantize()
             .domain([d3.min(rateById.values()), d3.max(rateById.values())])
@@ -288,19 +288,21 @@ var LineUp;
         svg.append("g")
             .attr("class", "counties")
             .selectAll("path")
-            .data(us.features)
+            .data(topojson.feature(us, us.objects.counties).features)
             .enter().append("path")
             .attr("class", function(d) {
-                // return quantize(rateById.get(d.id));
-
-                return 'counties';
+                return quantize(rateById.get(d.id));
             })
-            .attr("stroke", "black")
-            .attr("stroke-width", 2)
-            .attr("d", d3.geo.path().projection(projection))
-            .attr("transform","scale(3)");
+            .attr("d", path);
 
+        svg.append("path")
+            .datum(topojson.mesh(us, us.objects.states, function(a, b) {
+                return a !== b;
+            }))
+            .attr("class", "states")
+            .attr("d", path);
 
+  
 
     };
 

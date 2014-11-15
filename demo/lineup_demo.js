@@ -96,11 +96,10 @@ var us;
 
         var svg = d3.select("#county-map").append("svg")
             .attr("width", width)
-            .attr("height", height)
-            .attr("viewBox", "0,0,960,600");
+            .attr("height", height);
 
         queue()
-            .defer(d3.json, "./data/md-counties.json")
+            .defer(d3.json, "./data/us.json")
             .await(ready);
 
         function ready(error, usJson) {
@@ -111,16 +110,19 @@ var us;
             svg.append("g")
                 .attr("class", "counties")
                 .selectAll("path")
-                .data(usJson.features)
+                .data(topojson.feature(us, us.objects.counties).features)
                 .enter().append("path")
                 .attr("class", function(d) {
-                    return 'q4-9';
+                    return quantize(rateById.get(d.id));
                 })
-                .attr("stroke","black")
-                .attr("stroke-width",2)
-                .attr("d", d3.geo.path().projection(projection));
+                .attr("d", path);
 
-
+            svg.append("path")
+                .datum(topojson.mesh(us, us.objects.states, function(a, b) {
+                    return a !== b;
+                }))
+                .attr("class", "states")
+                .attr("d", path);
         }
 
     }

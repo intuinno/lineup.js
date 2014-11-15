@@ -13,11 +13,6 @@
       "domain": [0, 100]
     },
     {
-      "column": "academic",
-      "type": "number",
-      "domain": [0, 100]
-    },
-    {
       "column": "employer",
       "type": "number",
       "domain": [0, 100]
@@ -39,6 +34,7 @@
     },
     {
       "column": "internationalstudents",
+      "label": "international students",
       "type": "number",
       "domain": [0, 100]
     }
@@ -48,6 +44,10 @@
       {
         "column": "schoolname",
         "width": 200
+      },
+      {
+        "column": "academic",
+        "width": 100
       },
       {
         "type": "stacked",
@@ -78,6 +78,10 @@
             "width": 150
           }
         ]
+      },
+      {
+        "type": "stacked",
+        "label": "Combined 2"
       }
     ]
   }

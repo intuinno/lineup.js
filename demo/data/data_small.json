@@ -1,40 +1,44 @@
 {
-  "file": "wur2013.txt",
+  "file": "duck.txt",
   "separator" : "\t",
-  "primaryKey": "schoolname",
+  "primaryKey": "statename",
   "columns": [
     {
-      "column": "schoolname",
+      "column": "statename",
       "type": "string"
     },
     {
-      "column": "academic",
+      "column": "Fitness",
       "type": "number",
       "domain": [0, 100]
     },
     {
-      "column": "employer",
+      "column": "Fitness",
       "type": "number",
       "domain": [0, 100]
     },
     {
-      "column": "faculty",
+      "column": "Routine",
       "type": "number",
       "domain": [0, 100]
     },
     {
-      "column": "citations",
+      "column": "Nutrition",
       "type": "number",
       "domain": [0, 100]
     },
     {
-      "column": "international",
+      "column": "Sleep",
       "type": "number",
       "domain": [0, 100]
     },
     {
-      "column": "internationalstudents",
-      "label": "international students",
+      "column": "Weight",
+      "type": "number",
+      "domain": [0, 100]
+    },
+    {
+      "column": "Diabetes",
       "type": "number",
       "domain": [0, 100]
     }
@@ -42,46 +46,38 @@
   "layout": {
     "primary": [
       {
-        "column": "schoolname",
+        "column": "statename",
         "width": 200
-      },
-      {
-        "column": "academic",
-        "width": 100
       },
       {
         "type": "stacked",
         "label": "Combined",
         "children": [
           {
-            "column": "academic",
+            "column": "Fitness",
             "width": 100
           },
           {
-            "column": "employer",
+            "column": "Routine",
             "width": 100
           },
           {
-            "column": "faculty",
+            "column": "Nutrition",
             "width": 120
           },
           {
-            "column": "citations",
+            "column": "Sleep",
             "width": 130
           },
           {
-            "column": "international",
+            "column": "Weight",
             "width": 200
           },
           {
-            "column": "internationalstudents",
+            "column": "Diabetes",
             "width": 150
           }
         ]
-      },
-      {
-        "type": "stacked",
-        "label": "Combined 2"
       }
     ]
   }

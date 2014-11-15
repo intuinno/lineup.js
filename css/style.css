@@ -272,7 +272,7 @@
  * in the separate mode a dedicated header and body svg are used
  */
 .lu-mode-separate .lu-header {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     left: 0;
     width: 100%;
@@ -285,11 +285,11 @@
 .lu-mode-separate .lu-wrapper {
     position: relative;
     left: 0;
-    top: 50px;
+    /*top: 50px;*/
     width: 100%;
-    height: -moz-calc(100% - 50px);
+/*    height: -moz-calc(100% - 50px);
     height: -webkit-calc(100% - 50px);
-    height: calc(100% - 50px);
+    height: calc(100% - 50px);*/
     overflow-x: visible;
     overflow-y: auto;
 }

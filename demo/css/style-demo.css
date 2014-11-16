@@ -89,11 +89,8 @@ body {
 
 
 
-
 .counties {
   fill: none;
-  stroke: "black";
-  stroke-width="2"
 }
 
 .states {

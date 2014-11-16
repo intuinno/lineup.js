@@ -1,0 +1,9 @@
+{
+  "firebase": "habit2",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

@@ -1,3 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.container {
+    max-width: 800px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+
+}
+
+#county-map {
+    margin-right: 0px;
+    margin-left: 150px;
+    display: inline-block;
+}
+
+.overall-map {
+    text-align: center;
+}
+
+.toolbox {
+    margin-top: 70px;
+    margin-right: 60px;
+    width: 65px;
+    height: auto;
+    vertical-align: middle;
+    float: right;
+}
+
+.controls {
+    width: 250px;
+    height: auto;
+    margin-top: 30px;
+}
+
+
+
+.side-controls2 {
+    text-align: center;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 50px;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.header h3 span {
+  font-size: 0.4em;
+  margin-left: 1em;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+
+
+
+
 .counties {
   fill: none;
   stroke: "black";
